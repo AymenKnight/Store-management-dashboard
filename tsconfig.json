@@ -11,14 +11,14 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
 
-   /* Bundler mode */
-   "moduleResolution": "Node",
-   "allowImportingTsExtensions": true,
-   "resolveJsonModule": true,
-   "isolatedModules": true,
-   "noEmit": true,
-   "jsx": "react-jsx",
-   "jsxImportSource": "@emotion/react",
+    /* Bundler mode */
+    "moduleResolution": "Node",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
 
     /* Linting */
     "strict": true,
@@ -36,16 +36,16 @@
       "@libs/*": ["src/libs/*"],
       "@constants/*": ["src/utils/constants/*"],
       "@helpers/*": ["src/utils/helpers/*"],
-      "@models/*": ["src/models/*"],
+      "@models/*": ["src/ui/containers/modals/*"],
       "toSvg/*": ["src/assets/svg/*"],
       "toPng/*": ["src/assets/pictures/*"],
-      "@api/*": ["src/API/*"],
+      "@api/*": ["src/services/api/*"],
       "@colors": ["src/assets/styles/color.ts"],
       "@services/*": ["src/services/*"],
       "@stores/*": ["src/services/zustand/*"]
     }
   },
-  "include": ["src", "electron","@types"],
+  "include": ["src", "electron", "@types"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
