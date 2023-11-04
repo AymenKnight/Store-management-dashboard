@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import UpdateElectron from '@/components/update'
 import logoVite from './assets/logo-vite.svg'
 import logoElectron from './assets/logo-electron.svg'
 import './App.css'
@@ -11,7 +10,7 @@ function App() {
   return (
     <div className='App'>
       <div className='logo-box'>
-        <a href='https://github.com/electron-vite/electron-vite-react' target='_blank'>
+        <a href='https://github.com/electron-vite/electron-vite-react' target='_blank' rel="noreferrer">
           <img src={logoVite} className='logo vite' alt='Electron + Vite logo' />
           <img src={logoElectron} className='logo electron' alt='Electron + Vite logo' />
         </a>
@@ -32,7 +31,7 @@ function App() {
         Place static files into the<code>/public</code> folder <img style={{ width: '5em' }} src='./node.svg' alt='Node logo' />
       </div>
 
-      <UpdateElectron />
+      {/* <UpdateElectron /> */}
     </div>
   )
 }
