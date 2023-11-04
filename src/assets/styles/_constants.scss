@@ -1,0 +1,45 @@
+@use '~styles/appColors' as *;
+
+$gap: 5px;
+$opacityBlur:var(--opacity-blur);
+
+@mixin borderStyle {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 15px;
+
+}
+
+@mixin truncatedText   {
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin colorfulSpan {
+  background: linear-gradient(84.23deg, #DC519C 12.84%, #AE4EF5 57.33%, #6D7AFB 99.41%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin idle {
+  outline: $hotpurple 1px solid;
+  box-shadow: 0 0px 1px $bordercolor inset,inset 0 0 3px $hotpurple;
+  outline-offset: -1px;
+}
+@mixin bad {
+  outline: $hotred 1px solid;
+  outline-offset: -1px;
+  box-shadow: 0 0px 1px $bordercolor inset, inset 0 0 5px $hotred;
+}
+@mixin good {
+  outline: $goodgreen 1px solid;
+  box-shadow: 0 0px 1px $bordercolor inset,inset 0 0 3px $goodgreen;
+  outline-offset: -1px;
+}
+@mixin warm {
+  outline: $warmorange 1px solid;
+  box-shadow:  0 0px 1px $bordercolor inset,inset 0 0 3px $warmorange;
+  outline-offset: -1px;
+}
