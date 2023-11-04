@@ -1,0 +1,50 @@
+@use '~styles/appColors' as *;
+.create-course {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+  align-self: stretch;
+  overflow: auto;
+  padding-top: 50px;
+  gap: 20px;
+
+  > .create-course-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+    // overflow-y: auto;//TODO fix scroll
+    background-color: $white;
+
+    > .loading-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 500px;
+      width: 100%;
+    }
+
+    > .course-form {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+
+      > .checkbox-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+      }
+    }
+    > .create-course-footer {
+      display: flex;
+      padding: 10px 30px;
+    }
+  }
+}

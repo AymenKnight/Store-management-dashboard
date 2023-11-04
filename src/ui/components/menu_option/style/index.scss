@@ -1,0 +1,24 @@
+@use '~styles/appColors' as *;
+.menu-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 20px;
+
+  &:hover {
+    cursor: pointer;
+
+    > svg {
+      stroke: $primary;
+    }
+
+    > span {
+      color: $primary;
+    }
+  }
+
+  > span {
+    font-size: 15px;
+  }
+}

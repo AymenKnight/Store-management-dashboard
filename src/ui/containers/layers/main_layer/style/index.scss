@@ -1,0 +1,10 @@
+@use '~styles/appColors' as *;
+
+.main-layer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+  flex-grow: 1;
+}

@@ -1,0 +1,9 @@
+@use '~styles/appColors' as *;
+.app-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: calc(100vw - 250px);
+  padding: 20px;
+}

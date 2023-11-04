@@ -1,0 +1,15 @@
+@use '~styles/appColors' as *;
+.app-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 30px;
+  gap: 30px;
+  border-right: 2px solid rgba(233, 233, 233, 1);
+  min-width: 250px;
+
+  > .menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

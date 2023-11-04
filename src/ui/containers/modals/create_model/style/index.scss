@@ -1,0 +1,7 @@
+@use '~styles/appColors' as *;
+
+.modal-container-box {
+  > .modal-content {
+    background-color: $white;
+  }
+}

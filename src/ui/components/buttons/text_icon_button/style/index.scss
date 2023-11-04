@@ -1,0 +1,24 @@
+@use '~styles/appColors' as *;
+@use '~styles/constants' as *;
+@use '~styles/effects' as effects;
+
+.text-icon-button >button{
+  gap:0;
+  padding: 5px;
+  > span {
+    transition: max-width 0.2s;
+    max-width: 0;
+    font-style: normal;
+    font-size: 12px;
+    align-items: center;
+    visibility: hidden;
+    white-space: nowrap;
+  }
+  &:hover >  span {
+    transition: max-width 0.2s;
+    max-width: 100px;
+    width: 100%;
+    visibility: visible;
+    white-space: nowrap;
+  }
+}

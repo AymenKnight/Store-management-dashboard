@@ -1,0 +1,188 @@
+@use '~styles/appColors' as *;
+
+@use '~styles/appColors' as *;
+@use '~styles/constants' as *;
+@use '~styles/effects' as *;
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+  align-self: stretch;
+
+  > .field-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.03);
+    margin-bottom: 10px;
+
+    > .input-content {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      width: 100%;
+      padding: 10px;
+
+      > label {
+        font-weight: 500;
+        font-size: 16px;
+        color: $secondary;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      > input {
+        align-self: stretch;
+        color: $good-black;
+        background-color: transparent;
+        border: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        &::placeholder {
+          color: $text-gray;
+        }
+        width: 100%;
+      }
+
+      > .text-area {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex-grow: 1;
+        align-self: stretch;
+
+        > textarea {
+          background-color: unset;
+          border-radius: 7px;
+          border: none;
+          padding-top: 10px;
+          min-height: 100px;
+          // resize: none;
+        }
+        > textarea::placeholder,
+        > textarea::-moz-placeholder {
+          color: $silvergray;
+          font-weight: 400;
+          font-size: 15px;
+        }
+
+        textarea:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &:focus-within,
+  &:active,
+  &:focus {
+    > .field-wrapper {
+      outline: 2px solid $navyBlue;
+      > .input-content {
+        > label {
+          color: $navyBlue;
+        }
+        > input {
+          outline: none;
+        }
+      }
+    }
+  }
+  &.error {
+    > .field-wrapper {
+      outline: 2px solid $hotred;
+
+      > .input-content {
+        > label {
+          color: $hotred;
+        }
+      }
+    }
+    > .error-span {
+      color: $hotred;
+      padding: 5px 10px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+
+  &.input-border {
+    > .field-wrapper {
+      > .input-content {
+        > label {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        gap: 15px;
+        > input {
+          border: 1px solid $text-gray;
+          border-radius: 4px;
+          padding: 5px;
+        }
+        .text-area {
+          > textarea {
+            border-radius: 7px;
+            border: 1px solid $text-gray;
+          }
+
+          textarea:focus {
+            outline: none;
+            border-color: $navyBlue;
+          }
+        }
+      }
+    }
+    &:focus-within,
+    &:active,
+    &:focus {
+      > .field-wrapper {
+        > .input-content {
+          > input {
+            outline: none;
+            border-color: $navyBlue;
+          }
+        }
+      }
+    }
+
+    &.error {
+      > .field-wrapper {
+        > .input-content {
+          > input {
+            border-color: $hotred;
+          }
+        }
+      }
+      > .error-span {
+        color: $hotred;
+        padding: 5px 10px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    > .field-wrapper {
+      > .input-content {
+        > label {
+          color: $text-gray;
+        }
+      }
+    }
+  }
+}

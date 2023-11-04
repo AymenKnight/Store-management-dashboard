@@ -1,0 +1,48 @@
+@use '~styles/appColors' as *;
+.vertical-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 7px;
+    position: relative;
+    height: fit-content;
+
+    > span {
+        font-size: 18px;
+        color:$white;
+    }
+
+    > .description-div {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+        > span {
+            font-size: 14px;
+            font-weight: '400';
+            color:$text-gray;
+            text-align: center;
+
+            > span {
+                font-size: inherit;
+                font-weight: '400';
+                color: $coldblue;
+
+                cursor: pointer;
+                white-space:nowrap ;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    >.top-left-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}

@@ -1,0 +1,50 @@
+@use '~styles/appColors' as *;
+.teachers {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+  align-self: stretch;
+  overflow-y: auto;
+  padding-top: 50px;
+  gap: 20px;
+
+  > .loading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  > .items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    > .header-button-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+    > .scroll-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      > :first-child {
+        position: absolute;
+      }
+    }
+  }
+}
+
+.teachers-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

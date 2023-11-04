@@ -1,0 +1,23 @@
+@use '~styles/appColors' as *;
+
+.teachers-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+
+  > .main-form-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  > .form-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,24 @@
+@use '~styles/appColors' as *;
+.checkbox-tile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    > .checkbox-tile-text-container{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        > span:first-child{
+            font-weight: 700;
+            font-size: 15px;
+            color: $white;
+            + span {
+                font-weight: 500;
+                font-size: 14px;
+                color: $textgray;
+            }
+        }
+    }
+}

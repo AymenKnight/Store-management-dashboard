@@ -1,0 +1,37 @@
+@use "~styles/appColors" as *;
+.update-admin-drawer {
+    > :nth-child(3) {
+        min-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        > .drawer-head {
+            padding: 10px;
+
+            > h3 {
+                margin: 0;
+            }
+        }
+        > .admin-avatar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 10px 20px;
+
+            > :first-child {
+                margin-bottom: 10px;
+            }
+        }
+        > .drawer-body {
+            flex: 1;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        > .drawer-footer {
+            align-self: flex-end;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@use '~styles/appColors' as *;
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    background: $dark-color;
+    overflow: hidden;
+    border-radius: 7px;
+
+    > .modal-body {
+        display: flex;
+        flex-grow: 1;
+        align-self: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        > div {
+            flex-basis: 40%;
+            flex-grow: 1;
+        }
+    }
+    >.controls-center{
+        display: flex;
+        gap: 10px;
+        justify-content: center;    }
+
+    > .controls-end {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        justify-content: flex-end;
+    }
+}
