@@ -2,26 +2,50 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vite/client"],
+    "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+
+   /* Bundler mode */
+   "moduleResolution": "Node",
+   "allowImportingTsExtensions": true,
+   "resolveJsonModule": true,
+   "isolatedModules": true,
+   "noEmit": true,
+   "jsx": "react-jsx",
+   "jsxImportSource": "@emotion/react",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
+      "@components/*": ["src/ui/components/*"],
+      "@buttons/*": ["src/ui/components/buttons/*"],
+      "@containers/*": ["src/ui/containers/*"],
+      "@layers/*": ["src/ui/layers/*"],
+      "@assets/*": ["src/assets/*"],
+      "@libs/*": ["src/libs/*"],
+      "@constants/*": ["src/utils/constants/*"],
+      "@helpers/*": ["src/utils/helpers/*"],
+      "@models/*": ["src/models/*"],
+      "toSvg/*": ["src/assets/svg/*"],
+      "toPng/*": ["src/assets/pictures/*"],
+      "@api/*": ["src/API/*"],
+      "@colors": ["src/assets/styles/color.ts"],
+      "@services/*": ["src/services/*"],
+      "@stores/*": ["src/services/zustand/*"]
+    }
   },
-  "include": ["src", "electron"],
+  "include": ["src", "electron","@types"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
