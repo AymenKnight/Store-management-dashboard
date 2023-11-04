@@ -10,6 +10,7 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:storybook/recommended',
     'eslint-config-prettier',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
   ],
   settings: {
     react: {
@@ -26,10 +27,8 @@ module.exports = {
   },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@tanstack/query'],
+  plugins: ['react-refresh'],
   rules: {
-    '@tanstack/query/exhaustive-deps': 'error',
-    '@tanstack/query/prefer-query-object-syntax': 'error',
     'react/react-in-jsx-scope': 'off',
     // 'no-unused-vars': 'off',
     // '@typescript-eslint/ban-ts-comment': 'warn',
