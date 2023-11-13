@@ -22,9 +22,18 @@ if (process.contextIsolated) {
         return prisma.user.findMany(); // Example function, adjust according to your needs
       },
       getUserById: async (id: number) => {
-        return prisma.user.findUnique({ where: { id } }); // Example function, adjust according to your needs
+        return prisma.user.findUnique({ where: { id } });
       },
-      createUser: async (data: { name: string; email: string }) => {
+      createUser: async (data: {
+        username: string;
+        password: string;
+        role: string;
+        email: string;
+        firstName: string;
+        lastName: string;
+        phoneNumber?: string;
+        address?: string;
+      }) => {
         return prisma.user.create({ data });
       },
       // Add more exposed functions as needed
