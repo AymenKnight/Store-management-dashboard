@@ -10,7 +10,112 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id          Int       @id @default(autoincrement())
+  username    String    @unique
+  password    String
+  role        String    // Define roles (e.g., 'admin', 'manager', 'cashier')
+  firstName   String
+  lastName    String
+  email       String?
+  phoneNumber String?
+  address     String?
+
+
+  // Define relations with other models
+  productsCreated Product[]
+  salesMade       Sale[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  sku         String   @unique
+  barcode     String?
+  price       Float
+  costPrice   Float?
+  quantity    Int
+  reorderThreshold Int?
+  categoryId   Int?
+  supplierId  Int?
+  imageUrl     String?
+ 
+
+  // Define relations with other models
+  category    Category? @relation(fields: [categoryId], references: [id])
+  supplier    Supplier? @relation(fields: [supplierId], references: [id])
+  sales       Sale[]
+
+    // Define the opposite relation to 'productsCreated' in the 'User' model
+  creator     User @relation(fields: [creatorId], references: [id])
+  creatorId   Int
+
+   stockAdjustments StockAdjustment[]
+}
+
+model Category {
+  id       Int    @id @default(autoincrement())
+  name     String
+  description String?
+  // Add other category-related fields
+
+  // Define relations with other models
+  products Product[]
+}
+
+model Supplier {
+  id     Int      @id @default(autoincrement())
+  name   String
+  email  String?
+  phone  String?
+  address String?
+  // Add other supplier-related fields
+
+  // Define relations with other models
+  products Product[]
+}
+
+model Sale {
+  id          Int       @id @default(autoincrement())
+  saleDate    DateTime
+  customerId  Int     // Add customer-related information if needed
+  paymentMethod String?
+  totalAmount Float?
+  discount    Float?
+  // Add other sale-related fields
+
+  // Define relations with other models
+ 
+  userId      Int 
+  user        User @relation(fields: [userId], references: [id])
+
+  products        Product[]
+  customer    Customer @relation(fields: [customerId], references: [id])
+}
+
+
+
+model Customer {
+  id        Int      @id @default(autoincrement())
+  firstName String?
+  lastName  String?
+  email     String?
+  phone     String?
+  address   String?
+  // Add other customer-related fields
+
+  // Define relations with other models
+  sales Sale[]
+}
+
+model StockAdjustment {
+  id            Int       @id @default(autoincrement())
+  productId     Int
+  adjustmentDate DateTime
+  reason        String?
+  quantity      Int
+  // Add other fields related to stock adjustments
+
+  // Define relations with other models
+  product Product @relation(fields: [productId], references: [id])
 }
