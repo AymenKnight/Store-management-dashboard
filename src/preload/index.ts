@@ -17,6 +17,7 @@ if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI);
     contextBridge.exposeInMainWorld('api', api);
+    contextBridge.exposeInMainWorld('test', 123);
     contextBridge.exposeInMainWorld('prisma', {
       getUsers: async () => {
         return prisma.user.findMany(); // Example function, adjust according to your needs

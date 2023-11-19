@@ -10,6 +10,7 @@ if (process.contextIsolated) {
   try {
     electron.contextBridge.exposeInMainWorld("electron", preload.electronAPI);
     electron.contextBridge.exposeInMainWorld("api", api);
+    electron.contextBridge.exposeInMainWorld("test", 123);
     electron.contextBridge.exposeInMainWorld("prisma", {
       getUsers: async () => {
         return prisma.user.findMany();

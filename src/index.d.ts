@@ -25,5 +25,6 @@ declare global {
         name: string | null;
       }>;
     };
+    test: number;
   }
 }
