@@ -1,19 +1,29 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react-hooks/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended', 'eslint-config-prettier', 'plugin:@tanstack/eslint-plugin-query/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:storybook/recommended',
+    'plugin:storybook/recommended',
+    'eslint-config-prettier',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
+    'plugin:storybook/recommended',
+  ],
   settings: {
     react: {
       // Tells eslint-plugin-react to automatically detect the version of React to use.
-      version: 'detect'
+      version: 'detect',
     },
     // Tells eslint how to resolve imports
     'import/resolver': {
       node: {
         paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
-    }
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -26,7 +36,6 @@ module.exports = {
     // '@emotion/pkg-renaming': 'error',
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'react/prop-types': 0,
-    'no-console': 'warn',
     'linebreak-style': 'off',
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
@@ -39,22 +48,25 @@ module.exports = {
         selector: 'typeProperty',
         format: ['camelCase', 'PascalCase'],
         leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow'
+        trailingUnderscore: 'allow',
       },
       {
         selector: 'parameter',
         format: ['camelCase', 'PascalCase'],
         leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow'
+        trailingUnderscore: 'allow',
       },
       {
         selector: 'interface',
         format: ['PascalCase'],
         leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow'
-      }
+        trailingUnderscore: 'allow',
+      },
     ],
 
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
-  }
-}
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
+};
