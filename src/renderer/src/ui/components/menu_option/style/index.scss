@@ -6,11 +6,15 @@
   padding: 5px 10px;
   gap: 20px;
 
+  > .icon {
+    max-width: 20px;
+  }
+
   &:hover {
     cursor: pointer;
 
-    > svg {
-      stroke: $primary;
+    > .icon {
+      fill: $primary;
     }
 
     > span {

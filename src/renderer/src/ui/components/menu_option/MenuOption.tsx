@@ -3,12 +3,7 @@ import './style/index.scss';
 
 interface MenuOptionProps {
   name: string;
-  Icon: React.ForwardRefExoticComponent<
-    Omit<React.SVGProps<SVGSVGElement>, 'ref'> & {
-      title?: string | undefined;
-      titleId?: string | undefined;
-    } & React.RefAttributes<SVGSVGElement>
-  >;
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   iconProps?: React.SVGProps<SVGSVGElement> &
     React.RefAttributes<SVGSVGElement>;
   onClick?: () => void;
@@ -24,9 +19,9 @@ export default function MenuOption({
   return (
     <div className="menu-option" onClick={onClick}>
       <Icon
-        width={30}
-        height={30}
-        stroke={selected ? color.primary : color.secondary}
+        className="icon"
+        color={selected ? color.primary : color.secondary}
+        fontSize={25}
         {...iconProps}
       />
       <span
