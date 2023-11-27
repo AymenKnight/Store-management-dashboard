@@ -1,3 +1,4 @@
+import UserItem from '@components/user_item';
 import AppContent from './pages/app_content';
 import AppMenu from './pages/app_menu';
 import './style/index.scss';
@@ -7,7 +8,7 @@ export default function MainLayer({}: MainLayerProps) {
   return (
     <div className="main-layer">
       <AppMenu />
-
+      <UserItem />
       {/* <AppContent /> */}
     </div>
   );
