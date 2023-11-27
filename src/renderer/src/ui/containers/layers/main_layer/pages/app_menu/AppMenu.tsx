@@ -1,104 +1,62 @@
 import MenuOption from '@components/menu_option';
 import './style/index.scss';
 import Logo from 'toSvg/logo.svg';
-// import { Cog6ToothIcon as Setting } from '@heroicons/react/24/outline';
-import { CubeTransparentIcon as Subjects } from '@heroicons/react/24/outline';
-import { HomeIcon as Home } from '@heroicons/react/24/outline';
-import { Squares2X2Icon as Courses } from '@heroicons/react/24/outline';
-import { UserGroupIcon as Students } from '@heroicons/react/24/outline';
-import { AcademicCapIcon as Teachers } from '@heroicons/react/24/outline';
-import { CreditCardIcon as Payments } from '@heroicons/react/24/outline';
-import { PresentationChartLineIcon as Announcements } from '@heroicons/react/24/outline';
-import {
-  TicketIcon as Coupons,
-  DocumentPlusIcon,
-} from '@heroicons/react/24/outline';
-import { useRouterState } from '@tanstack/react-router';
-import { router } from '@services/routes';
+import { BiSolidDashboard } from 'react-icons/bi';
+import { RiShoppingBag3Fill } from 'react-icons/ri';
+import { IoDocumentTextSharp } from 'react-icons/io5';
+import { MdGroups } from 'react-icons/md';
+import { FaCreditCard } from 'react-icons/fa';
+import { IoMdSettings } from 'react-icons/io';
 
 interface AppMenuProps {}
 export default function AppMenu({}: AppMenuProps) {
-  const {
-    location: { pathname },
-  } = useRouterState();
-
   return (
     <div className="app-menu">
       <Logo width={180} height={50} />
       <div className="menu-container">
         <MenuOption
           name="Overview"
-          Icon={Home}
-          selected={pathname === '/'}
+          Icon={BiSolidDashboard}
           onClick={() => {
-            router.navigate({ to: '/' });
-            // console.log('router', router.state);
+            console.log('overview');
           }}
         />
         <MenuOption
-          name="Subjects"
-          Icon={Subjects}
-          selected={pathname === '/SUBJECTS'}
+          name="Products"
+          Icon={RiShoppingBag3Fill}
           onClick={() => {
-            router.navigate({ to: '/SUBJECTS' });
-            // console.log('router', router.state);
+            console.log('products');
           }}
         />
         <MenuOption
-          name="Create Course"
-          Icon={DocumentPlusIcon}
-          selected={pathname === '/COURSES/createCourse'}
+          name="Orders"
+          Icon={IoDocumentTextSharp}
           onClick={() => {
-            router.navigate({ to: '/COURSES/createCourse' });
-            // console.log('router', router.state);
+            console.log('orders');
           }}
         />
         <MenuOption
-          name="Courses"
-          Icon={Courses}
-          selected={pathname === '/COURSES'}
-          onClick={() => {
-            router.navigate({ to: '/COURSES' });
+          name="Customers"
+          Icon={MdGroups}
+          iconProps={{
+            fontSize: 25,
           }}
-        />
-        <MenuOption
-          name="Students"
-          Icon={Students}
-          selected={pathname === '/STUDENTS'}
           onClick={() => {
-            router.navigate({ to: '/STUDENTS' });
-          }}
-        />
-        <MenuOption
-          name="Teachers"
-          Icon={Teachers}
-          selected={pathname === '/TEACHERS'}
-          onClick={() => {
-            router.navigate({ to: '/TEACHERS' });
+            console.log('customers');
           }}
         />
         <MenuOption
           name="Payments"
-          Icon={Payments}
-          selected={pathname === '/PAYMENTS'}
+          Icon={FaCreditCard}
           onClick={() => {
-            router.navigate({ to: '/PAYMENTS' });
+            console.log('payments');
           }}
         />
         <MenuOption
-          name="Announcements"
-          Icon={Announcements}
-          selected={pathname === '/ANNOUNCEMENTS'}
+          name="Settings"
+          Icon={IoMdSettings}
           onClick={() => {
-            router.navigate({ to: '/ANNOUNCEMENTS' });
-          }}
-        />
-        <MenuOption
-          name="Coupons"
-          Icon={Coupons}
-          selected={pathname === '/COUPONS'}
-          onClick={() => {
-            router.navigate({ to: '/COUPONS' });
+            console.log('settings');
           }}
         />
       </div>
