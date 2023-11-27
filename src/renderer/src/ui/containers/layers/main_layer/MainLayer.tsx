@@ -7,6 +7,7 @@ export default function MainLayer({}: MainLayerProps) {
   return (
     <div className="main-layer">
       <AppMenu />
+
       {/* <AppContent /> */}
     </div>
   );

@@ -1,9 +1,0 @@
-@use '~styles/appColors' as *;
-.add-branch-modal {
-  > .branches-form {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-}
