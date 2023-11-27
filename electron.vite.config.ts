@@ -1,11 +1,11 @@
 import path from 'path';
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite';
 import react from '@vitejs/plugin-react';
-import electron from 'vite-plugin-electron';
+// import electron from 'vite-plugin-electron';
 import svgr from 'vite-plugin-svgr';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
-const env = dotenv.config().parsed;
+// const env = dotenv.config().parsed;
 
 export default defineConfig(() => ({
   define: {
@@ -62,7 +62,9 @@ export default defineConfig(() => ({
           plugins: ['@emotion/babel-plugin'],
         },
       }),
-      svgr({}),
+      svgr({
+        include: '**/*.svg',
+      }),
     ],
   },
 }));
