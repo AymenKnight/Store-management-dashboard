@@ -1,4 +1,27 @@
 @use '~styles/appColors' as *;
 .user-item {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background;
+  padding: 20px;
+  gap: 10px;
+
+  > img {
+    border-radius: 50%;
+  }
+
+  > .user-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    > span {
+      color: $coldblue;
+
+      + span {
+        color: $dark-color;
+      }
+    }
+  }
 }
