@@ -10,12 +10,12 @@ const config: StorybookConfig = {
     config.resolve = {
       alias: {
         // Define your module aliases here
-        '@components': path.resolve('src/renderer/src/ui/components'),
+        '@components': path.resolve('src/renderer/src/ui/components/'),
         '@buttons': path.resolve('src/renderer/src/ui/components/buttons'),
         '@containers': path.resolve('src/renderer/src/ui/containers'),
-        '@layers': path.resolve(__dirname, 'src/renderer/src/ui/layers'),
-        '@assets': path.resolve(__dirname, 'src/renderer/src/assets'),
-        '@libs': path.resolve(__dirname, 'src/renderer/src/libs'),
+        '@layers': path.resolve('src/renderer/src/ui/layers'),
+        '@assets': path.resolve('src/renderer/src/assets'),
+        '@libs': path.resolve('src/renderer/src/libs'),
         '@constants': path.resolve('src/renderer/src/utils/constants'),
         '@helpers': path.resolve('src/renderer/src/utils/helpers'),
         '@models': path.resolve('src/renderer/src/models'),
