@@ -1,24 +1,22 @@
 import './style/index.scss';
 import default_product from 'toPng/default_product.jpg';
 interface ItemComponentProps {
-  width?: number;
-  height?: number;
   src?: string;
   title: string;
   category: string;
   price: string;
+  style?: React.CSSProperties;
 }
 export default function ItemComponent({
-  width = 100,
-  height = 100,
   src = default_product,
   title,
   category,
   price,
+  style,
 }: ItemComponentProps) {
   return (
-    <div className="item-component">
-      <img src={default_product} />
+    <div className="item-component" style={style}>
+      <img src={src} />
       <div>
         <div className="title_and_category">
           <div>{title}</div>

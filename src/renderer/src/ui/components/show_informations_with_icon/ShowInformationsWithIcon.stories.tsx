@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ItemComponent from './ItemComponent';
-import user_image from 'toPng/user_profile_test.png';
-import { title } from 'process';
+import ShowInformationsWithIcon from './ShowInformationsWithIcon';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'ItemComponent',
-  component: ItemComponent,
+  title: 'ShowInformationsWithIcon',
+  component: ShowInformationsWithIcon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -15,20 +13,19 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof ItemComponent>;
+} satisfies Meta<typeof ShowInformationsWithIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    category: 'category',
-    price: '1000 DZ',
-    src: user_image,
     title: 'title',
-    style: {
-      width: '200px',
-      height: '200px',
-    },
+    titleIcon: 'titleIcon',
+    details: 'details',
+    detailsIcon: 'detailsIcon',
+    icon: 'icon',
+    iconText: 'iconText',
+    iconTextColor: 'iconTextColor',
   },
 };

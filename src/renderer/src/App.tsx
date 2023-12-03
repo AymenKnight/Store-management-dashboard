@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.scss';
 import MainLayer from '@containers/layers/main_layer';
 
