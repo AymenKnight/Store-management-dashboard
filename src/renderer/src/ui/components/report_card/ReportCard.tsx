@@ -1,5 +1,6 @@
+import NotAButton from '@components/not_a_button';
 import './style/index.scss';
-import { RiArrowDownSFill } from 'react-icons/ri';
+import { BiSolidDownArrow } from 'react-icons/bi';
 import { BiSolidUpArrow } from 'react-icons/bi';
 
 interface ReportCardProps {
@@ -12,6 +13,7 @@ export default function ReportCard({
   value,
   percentage,
 }: ReportCardProps) {
+  //TODO add icon for title
   return (
     <div className="report-card">
       <span>{title}</span>
@@ -21,7 +23,7 @@ export default function ReportCard({
           {percentage > 0 ? (
             <BiSolidUpArrow size={18} css={{ color: 'green' }} />
           ) : (
-            <RiArrowDownSFill size={18} css={{ color: 'red' }} />
+            <BiSolidDownArrow size={18} css={{ color: 'red' }} />
           )}
           <span css={{ color: percentage > 0 ? 'green' : 'red' }}>
             {percentage}
