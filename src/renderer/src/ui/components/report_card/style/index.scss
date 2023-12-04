@@ -1,0 +1,19 @@
+@use '~styles/appColors' as *;
+.report-card {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: rgb(241, 241, 241) 1px solid;
+  background-color: rgb(249, 249, 249);
+  border-radius: 15px;
+  min-width: 200px;
+  font-size: 17px;
+}
+
+.persentage {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
