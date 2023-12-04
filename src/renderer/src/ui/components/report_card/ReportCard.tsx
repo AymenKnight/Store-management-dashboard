@@ -1,31 +1,31 @@
 import './style/index.scss';
-import increase from 'toPng/increase.png';
-import decrease from 'toPng/decrease.png';
+import { RiArrowDownSFill } from 'react-icons/ri';
+import { BiSolidUpArrow } from 'react-icons/bi';
+
 interface ReportCardProps {
-  style?: React.CSSProperties;
   title: string;
-  valeu: string;
-  persentage: string;
+  value: number;
+  percentage?: number;
 }
 export default function ReportCard({
-  style,
   title,
-  valeu,
-  persentage,
+  value,
+  percentage,
 }: ReportCardProps) {
   return (
-    <div className="report-card" style={style}>
-      <div>{title}</div>
-      <div>{valeu}</div>
-      {Array.from(persentage)[0] == '-' ? (
-        <div className="persentage">
-          <img src={decrease} style={{ width: '50px', height: '50px' }} />
-          <div style={{ color: 'red' }}>{persentage}</div>
-        </div>
-      ) : (
-        <div className="persentage">
-          <img src={increase} style={{ width: '50px', height: '50px' }} />
-          <div style={{ color: 'green' }}>{persentage}</div>
+    <div className="report-card">
+      <span>{title}</span>
+      <span>${value}DZ</span>
+      {percentage != undefined && (
+        <div className="percentage-div">
+          {percentage > 0 ? (
+            <BiSolidUpArrow size={18} css={{ color: 'green' }} />
+          ) : (
+            <RiArrowDownSFill size={18} css={{ color: 'red' }} />
+          )}
+          <span css={{ color: percentage > 0 ? 'green' : 'red' }}>
+            {percentage}
+          </span>
         </div>
       )}
     </div>

@@ -1,7 +1,5 @@
 @use '~styles/appColors' as *;
 .report-card {
-  padding-left: 10px;
-  padding-right: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,11 +7,26 @@
   background-color: rgb(249, 249, 249);
   border-radius: 15px;
   min-width: 200px;
-  font-size: 17px;
+  flex-grow: 1;
+  height: fit-content;
+  padding: 10px 15px;
+
+  > span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+  }
 }
 
-.persentage {
+.percentage-div {
   display: flex;
+  flex-direction: row;
+  justify-content: baseline;
   align-items: center;
-  font-weight: 700;
+  gap: 5px;
+
+  > span {
+    font-weight: 700;
+    font-size: 16px;
+  }
 }

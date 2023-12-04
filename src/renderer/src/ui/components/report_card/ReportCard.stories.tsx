@@ -21,8 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     title: 'Report Title',
-    valeu: 'Report Value',
-    persentage: '+5%',
-    style: { width: '600px', height: 'fit-content' },
+    value: 200,
+    percentage: 10,
   },
 };

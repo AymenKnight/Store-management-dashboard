@@ -29,12 +29,7 @@ export default function MainLayer({}: MainLayerProps) {
         price="12"
         style={{ width: '200px', height: '200px' }}
       />
-      <ReportCard
-        style={{ width: '600px', height: 'fit-content' }}
-        title="tile"
-        valeu="200 DZ"
-        persentage="+5%"
-      />
+      <ReportCard title="tile" value={200} />
       {/* <AppContent /> */}
     </div>
   );
