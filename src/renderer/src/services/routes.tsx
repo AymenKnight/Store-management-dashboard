@@ -1,14 +1,29 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import { BiSolidDashboard } from 'react-icons/bi';
+import { IoDocumentTextSharp } from 'react-icons/io5';
+import { RiShoppingBag3Fill } from 'react-icons/ri';
+import { MdGroups } from 'react-icons/md';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    children: [
+      {
+        path: 'top-products',
+        element: <div>top products</div>,
+      },
+      {
+        path: 'products-grid',
+        element: <div>products grid</div>,
+      },
+      {
+        path: 'products-management',
+        element: <div>products management</div>,
+      },
+    ],
   },
-  {
-    path: '/products',
-    element: <div>products</div>,
-  },
+
   {
     path: '/orders',
     element: <div>orders</div>,
@@ -26,4 +41,48 @@ const router = createBrowserRouter([
     element: <div>settings</div>,
   },
 ]);
+
+export const routesData: {
+  mainRouteName: string;
+  mainRouteIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  routes?: {
+    name: string;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    path: string;
+    onClick?: () => void;
+  }[];
+}[] = [
+  {
+    mainRouteName: 'Products',
+    mainRouteIcon: BiSolidDashboard,
+    routes: [
+      {
+        name: 'Products grid',
+        path: `products-grid`,
+        icon: RiShoppingBag3Fill,
+        onClick: () => {
+          console.log('products');
+        },
+      },
+      {
+        name: 'Products management',
+        path: 'products-management',
+        icon: IoDocumentTextSharp,
+        onClick: () => {
+          console.log('products');
+        },
+      },
+
+      {
+        name: 'top products',
+        path: 'top-products',
+        icon: MdGroups,
+        onClick: () => {
+          console.log('products');
+        },
+      },
+    ],
+  },
+];
+
 export default router;
