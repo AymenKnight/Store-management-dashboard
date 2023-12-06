@@ -8,6 +8,7 @@ import user_image from 'toPng/user_profile_test.png';
 import ShowInformationsWithIcon from '@components/show_informations_with_icon';
 import ItemComponent from '@components/item_component';
 import ReportCard from '@components/report_card';
+import AverageRateCard from '@components/average_rate_card';
 
 interface MainLayerProps {}
 export default function MainLayer({}: MainLayerProps) {
@@ -29,6 +30,7 @@ export default function MainLayer({}: MainLayerProps) {
         style={{ width: '200px', height: '200px' }}
       />
       <ReportCard title="tile" value={200} />
+      <AverageRateCard />
       {/* <AppContent /> */}
     </div>
   );
