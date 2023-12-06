@@ -1,17 +1,31 @@
 @use '~styles/appColors' as *;
+
 .menu-option {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 5px 10px;
-  gap: 20px;
+  padding: 8px 15px;
+  gap: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  transition: all 0.3s ease-in-out;
 
   > .icon {
     max-width: 20px;
+    color: $primary;
+  }
+
+  > span {
+    font-size: 16px;
+    font-weight: 700;
+    color: $primary;
   }
 
   &:hover {
-    cursor: pointer;
+    background-color: $background;
+    border: 1px solid $bordercolor;
 
     > .icon {
       fill: $primary;
@@ -20,9 +34,5 @@
     > span {
       color: $primary;
     }
-  }
-
-  > span {
-    font-size: 15px;
   }
 }

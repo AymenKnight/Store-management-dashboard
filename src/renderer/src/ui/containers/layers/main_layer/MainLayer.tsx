@@ -15,7 +15,7 @@ export default function MainLayer({}: MainLayerProps) {
   return (
     <div className="main-layer">
       <AppMenu />
-      <UserItem src={user_image} />
+      {/* <UserItem src={user_image} />
       <ShowInformationsWithIcon
         details="details"
         title="title"
@@ -32,6 +32,8 @@ export default function MainLayer({}: MainLayerProps) {
       <ReportCard title="tile" value={200} />
       <AverageRateCard />
       {/* <AppContent /> */}
+      <ReportCard title="tile" value={200} />
+      <AppContent />
     </div>
   );
 }

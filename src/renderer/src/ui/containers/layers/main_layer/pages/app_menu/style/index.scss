@@ -4,8 +4,8 @@
   flex-direction: column;
   padding: 15px 30px;
   gap: 30px;
-  border-right: 2px solid rgba(233, 233, 233, 1);
-  min-width: 250px;
+  border-right: 1px solid $bordercolor;
+  background-color: $secondary;
 
   > .menu-container {
     display: flex;

@@ -2,7 +2,7 @@ import { MouseEventHandler, useEffect, useState } from 'react';
 import './style/index.scss';
 import SVG from 'react-inlinesvg';
 import { createAvatar } from '@dicebear/core';
-import * as style from '@dicebear/avatars-initials-sprites';
+import { initials } from '@dicebear/collection';
 
 interface CircleAvatarProps {
   src?: string;
@@ -27,7 +27,7 @@ function CircleAvatar({
   open,
   className,
 }: CircleAvatarProps) {
-  const avatar = createAvatar(style as any, {
+  const avatar = createAvatar(initials, {
     seed: alt,
   });
 
