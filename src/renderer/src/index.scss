@@ -1,10 +1,10 @@
-@use "~font/font" as *;
-@use "~styles/appColors" as *;
+@use '~font/font' as *;
+@use '~styles/appColors' as *;
 @include fonts;
 * {
   box-sizing: border-box;
   user-select: none;
-  font-family: "Sarabun", "noto", Arial, sans-serif;
+  font-family: 'Sarabun', 'noto', Arial, sans-serif;
   color: $text-color;
   scrollbar-color: $primary transparent;
   scrollbar-width: thin;
@@ -18,20 +18,20 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="file"]::-webkit-file-upload-button {
+input[type='file']::-webkit-file-upload-button {
   display: none;
 }
 
 :root {
-  --primary: rgba(44, 155, 200, 1);
-  --secondary: rgba(105, 105, 105, 1);
+  --primary: #d8e9ff;
+  --secondary: #031123;
   --good-black: rgba(64, 64, 64, 1);
   --hot-pink: rgba(251, 119, 166, 1);
-  --text-gray: rgba(202, 202, 202, 1);
-  --background: rgba(54, 144, 175, 0.1);
+  --text-gray: #e2e1e1;
+  --background: #00193b;
   --navy-blue: #072f60;
 
-  --lighten: rgba(255, 255, 255, 0.07000000029802322);
+  --lighten: #d8e9ff;
   --darken: rgba(0, 0, 0, 0.5);
   --dark-color: rgba(31, 30, 37, 1);
   --red: rgba(255, 38, 38, 1);
@@ -44,7 +44,7 @@ input[type="file"]::-webkit-file-upload-button {
   --warm-orange: #f2994a;
   --secondary-color: #344175;
   --darker-secondary-color: #29336a;
-  --border-color: #3c4b7e;
+  --border-color: #354585;
   --silver-gray: #646d8d;
   --hot-purple: #626ed4;
   --white: #ffffff;
