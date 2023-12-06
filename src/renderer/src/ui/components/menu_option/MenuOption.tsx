@@ -1,5 +1,6 @@
 import color from '@assets/styles/color';
 import './style/index.scss';
+import TextButton from '@components/buttons/text_button';
 
 interface MenuOptionProps {
   name: string;
@@ -17,21 +18,24 @@ export default function MenuOption({
   selected = false,
 }: MenuOptionProps) {
   return (
-    <div className="menu-option" onClick={onClick}>
-      <Icon
-        className="icon"
-        color={selected ? color.primary : color.secondary}
-        fontSize={25}
-        {...iconProps}
-      />
-      <span
-        css={{
-          color: selected ? color.primary : color.secondary,
-          fontWeight: selected ? 'bold' : 'normal',
-        }}
-      >
-        {name}
-      </span>
-    </div>
+    <TextButton
+      text={name}
+      fontSize={15}
+      fontColor={color.primary}
+      onPress={onClick}
+      backgroundColor={selected ? color.background : 'transparent'}
+      borderColor={selected ? color.border_color : 'transparent'}
+      afterBgColor={color.background}
+      activeBorderColor={color.border_color}
+      afterBorderColor={color.border_color}
+      css={{
+        gap: 15,
+        transition: 'all 0.3s ease-in-out',
+      }}
+      alignment="flex-start"
+      Icon={<Icon fontSize={20} color={color.primary} {...iconProps} />}
+      width={200}
+      padding={'8px 15px'}
+    />
   );
 }
