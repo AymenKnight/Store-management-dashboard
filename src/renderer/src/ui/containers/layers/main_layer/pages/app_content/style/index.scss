@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  width: calc(100vw - 250px);
   padding: 20px;
+  flex-grow: 1;
+  overflow: hidden;
 }

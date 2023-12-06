@@ -6,6 +6,8 @@
   gap: 30px;
   border-right: 1px solid $bordercolor;
   background-color: $secondary;
+  min-width: 300px;
+  overflow: hidden;
 
   > .menu-container {
     display: flex;
