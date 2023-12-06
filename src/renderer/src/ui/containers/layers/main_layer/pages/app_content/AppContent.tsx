@@ -1,8 +1,8 @@
-import { Outlet } from '@tanstack/react-router';
 import './style/index.scss';
 import Header from '@components/header';
 import color from '@assets/styles/color';
 import HeaderControls from '@components/header_controls';
+import { Outlet } from 'react-router-dom';
 interface AppContentProps {}
 export default function AppContent({}: AppContentProps) {
   return (
