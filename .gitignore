@@ -35,3 +35,6 @@ release
 # renders files
 index-6b71ab78.css
 index-a82d54c4.js
+/out
+/out/renderer
+

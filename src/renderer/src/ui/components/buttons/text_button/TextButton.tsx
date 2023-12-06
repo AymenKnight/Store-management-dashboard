@@ -21,7 +21,7 @@ export type IconType =
   | FunctionComponent<SVGProps<SVGSVGElement>>
   | IconProps
   | ReactNode;
-interface TextButtonProps {
+export interface TextButtonProps {
   className?: string;
   text?: string;
   Icon?: IconType;
