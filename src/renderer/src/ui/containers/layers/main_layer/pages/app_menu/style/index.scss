@@ -5,7 +5,7 @@
   padding: 15px 30px;
   gap: 30px;
   border-right: 1px solid $bordercolor;
-  min-width: 250px;
+  background-color: $secondary;
 
   > .menu-container {
     display: flex;

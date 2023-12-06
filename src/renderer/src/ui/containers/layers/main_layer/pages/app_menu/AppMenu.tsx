@@ -7,6 +7,8 @@ import { IoDocumentTextSharp } from 'react-icons/io5';
 import { MdGroups } from 'react-icons/md';
 import { FaCreditCard } from 'react-icons/fa';
 import { IoMdSettings } from 'react-icons/io';
+import TextButton from '@components/buttons/text_button';
+import color from '@assets/styles/color';
 
 interface AppMenuProps {}
 export default function AppMenu({}: AppMenuProps) {
@@ -17,6 +19,7 @@ export default function AppMenu({}: AppMenuProps) {
         <MenuOption
           name="Overview"
           Icon={BiSolidDashboard}
+          selected={true}
           onClick={() => {
             console.log('overview');
           }}
