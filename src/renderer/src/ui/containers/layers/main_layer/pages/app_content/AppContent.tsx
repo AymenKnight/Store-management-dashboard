@@ -18,6 +18,7 @@ export default function AppContent({}: AppContentProps) {
         alignItems="center"
         buttonNode={<HeaderControls />}
       />
+
       <Outlet />
     </div>
   );

@@ -11,10 +11,6 @@ interface AverageRateCardProps {}
 export default function AverageRateCard({}: AverageRateCardProps) {
   return (
     <div className="average-rate-card">
-      <div className="icon-container">
-        <img src={user_profile_test} css={{ width: 90, height: 90 }} />
-        <span>Stor Name</span>
-      </div>
       <div className="details-container">
         <div className="title-details-container">
           <span css={{ fontWeight: 'bold', fontSize: 28 }}>card title</span>
