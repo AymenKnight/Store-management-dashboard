@@ -16,21 +16,30 @@ interface MenuDropdownProps {
     onClick?: () => void;
   }[];
   selected?: boolean;
+  setIsListShown?: () => void;
+  mainRouteSelected?: boolean;
+  children?: React.ReactNode[];
 }
 export default function MenuDropdown({
   selected = false,
   mainRouteName,
   mainRouteIcon,
   routes,
+  setIsListShown,
+  mainRouteSelected = false,
+  children,
 }: MenuDropdownProps) {
-  const [isListShown, setIsListShown] = useState(false);
+  const [isListShown, setIsListShownState] = useState<boolean>(selected);
 
-  const location = useLocation();
-  const navigate = useNavigate();
+  const handleSelection = () => {
+    if (selected) {
+      setIsListShownState(!isListShown);
+    } else {
+      setIsListShownState(true);
+      setIsListShown && setIsListShown();
+    }
+  };
 
-  const pathname = location.pathname.split('/');
-
-  console.log('pathname', pathname[pathname.length - 1]);
   return (
     <motion.div
       className="menu-dropdown"
@@ -42,22 +51,11 @@ export default function MenuDropdown({
       <MenuOption
         name={mainRouteName}
         Icon={mainRouteIcon}
-        selected={
-          routes
-            ? routesData.some((route) => {
-                if (route.routes && route.mainRouteName == mainRouteName)
-                  return route.routes.some((route) => {
-                    return route.path === pathname[pathname.length - 1];
-                  });
-              })
-            : false
-        }
-        onClick={() => {
-          setIsListShown(!isListShown);
-        }}
+        selected={mainRouteSelected}
+        onClick={handleSelection}
       />
       <AnimatePresence mode="wait">
-        {isListShown && routes && routes.length > 0 && (
+        {isListShown && selected && routes && routes.length > 0 && (
           <motion.div
             className="menu-dropdown-list"
             initial={{ opacity: 0, height: 0 }}
@@ -65,38 +63,7 @@ export default function MenuDropdown({
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            {routes.map((route, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{
-                  duration: 0.3,
-                  ease: 'easeInOut',
-                  delay: index * 0.1,
-                }}
-              >
-                <MenuOption
-                  key={index}
-                  name={route.name}
-                  Icon={FaCircle}
-                  selected={pathname[pathname.length - 1] === route.path}
-                  onClick={() => {
-                    navigate(route.path);
-                  }}
-                  iconProps={{
-                    size: 12,
-                    opacity:
-                      pathname[pathname.length - 1] === route.path ? 1 : 0.2,
-                  }}
-                  buttonProps={{
-                    alignSelf: 'flex-end',
-                    width: 250,
-                  }}
-                />
-              </motion.div>
-            ))}
+            {children}
           </motion.div>
         )}
       </AnimatePresence>
