@@ -2,6 +2,7 @@
 .menu-dropdown {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 
   > .menu-dropdown-list {
     display: flex;
