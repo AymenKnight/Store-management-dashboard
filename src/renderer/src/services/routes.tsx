@@ -10,6 +10,20 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: 'sellers',
+        element: <div>sellers</div>,
+        children: [
+          {
+            path: ':sellerId',
+            element: <div>seller detail</div>,
+          },
+        ],
+      },
+      {
+        path: 'sales-analytics',
+        element: <div>sales analytics</div>,
+      },
+      {
         path: 'top-products',
         element: <div>top products</div>,
       },
@@ -52,6 +66,25 @@ export const routesData: {
     onClick?: () => void;
   }[];
 }[] = [
+  {
+    mainRouteName: 'Dashboard',
+    mainRouteIcon: BiSolidDashboard,
+    routes: [
+      {
+        name: 'sales analytics',
+        path: 'sales-analytics',
+        icon: IoDocumentTextSharp,
+        onClick: () => {
+          console.log('sales analytics');
+        },
+      },
+      {
+        name: 'sellers list',
+        path: 'sellers',
+        icon: MdGroups,
+      },
+    ],
+  },
   {
     mainRouteName: 'Products',
     mainRouteIcon: BiSolidDashboard,
