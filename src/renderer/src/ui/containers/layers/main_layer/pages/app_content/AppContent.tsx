@@ -3,6 +3,7 @@ import Header from '@components/header';
 import color from '@assets/styles/color';
 import HeaderControls from '@components/header_controls';
 import { Outlet } from 'react-router-dom';
+import PageTitleRefresh from '@components/page_title_refresh';
 interface AppContentProps {}
 export default function AppContent({}: AppContentProps) {
   return (
@@ -18,6 +19,7 @@ export default function AppContent({}: AppContentProps) {
         alignItems="center"
         buttonNode={<HeaderControls />}
       />
+      <PageTitleRefresh title="static page" />
 
       <Outlet />
     </div>

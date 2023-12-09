@@ -4,7 +4,7 @@ import MenuDropdown from '@components/menu_dropdown';
 import { routesData } from '@services/routes';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+//import { AnimatePresence, motion } from 'framer-motion';
 import MenuOption from '@components/menu_option';
 import { FaCircle } from 'react-icons/fa';
 
@@ -42,7 +42,7 @@ export default function AppMenu({}: AppMenuProps) {
                     })
               }
             >
-              {route.routes?.map((route, index) => (
+              {/*route.routes?.map((route, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
@@ -73,7 +73,7 @@ export default function AppMenu({}: AppMenuProps) {
                     }}
                   />
                 </motion.div>
-              ))}
+                  ))*/}
             </MenuDropdown>
           </div>
         ))}

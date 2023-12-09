@@ -4,7 +4,7 @@ import { FaCircle } from 'react-icons/fa';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { routesData } from '@services/routes';
-import { AnimatePresence, motion } from 'framer-motion';
+//import { AnimatePresence, motion } from 'framer-motion';
 
 interface MenuDropdownProps {
   mainRouteName: string;
@@ -41,7 +41,8 @@ export default function MenuDropdown({
   };
 
   return (
-    <motion.div
+    <div></div>
+    /*<motion.div
       className="menu-dropdown"
       initial={{ gap: 0 }}
       animate={{ gap: 10 }}
@@ -67,6 +68,6 @@ export default function MenuDropdown({
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </motion.div>*/
   );
 }
