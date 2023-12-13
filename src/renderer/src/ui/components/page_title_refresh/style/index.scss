@@ -3,11 +3,11 @@
   display: flex;
   justify-content: space-between;
   height: fit-content;
-  background-color: $navyBlue;
-  flex-grow: 1;
+  background-color: $secondary;
   border-radius: 10px;
-  padding: 25px;
+  padding: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .title_container {

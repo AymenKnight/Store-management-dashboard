@@ -1,17 +1,23 @@
 @use '~styles/appColors' as *;
+.report-card-container {
+  display: flex;
+  align-items: center;
+  border: $navyBlue 1px solid;
+  background-color: $background;
+  border-radius: 15px;
+  min-width: 200px;
+  padding: 10px 15px;
+  gap: 10px;
+}
 .report-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: rgb(241, 241, 241) 1px solid;
-  background-color: rgb(249, 249, 249);
-  border-radius: 15px;
-  min-width: 200px;
   flex-grow: 1;
   height: fit-content;
-  padding: 10px 15px;
 
   > span {
+    color: $white;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;

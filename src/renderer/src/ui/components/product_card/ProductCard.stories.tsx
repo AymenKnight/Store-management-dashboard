@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ReportCard from './ReportCard';
+import ProductCard from './ProductCard';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'ReportCard',
-  component: ReportCard,
+  title: 'ProductCard',
+  component: ProductCard,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -13,16 +13,17 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof ReportCard>;
+} satisfies Meta<typeof ProductCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    type: 'revenue',
-    title: 'Report Title',
-    value: 200,
-    percentage: 10,
+    title: 'title',
+    Available: 10,
+    sold: 5,
+    price: 100,
+    salePrice: 50,
   },
 };
