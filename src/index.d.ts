@@ -19,7 +19,16 @@ declare global {
         email: string;
         name: string | null;
       }>;
-      createUser: (data: { name: string; email: string }) => Promise<{
+      createUser: (data: {
+        username: string;
+        password: string;
+        role: string;
+        email: string;
+        firstName: string;
+        lastName: string;
+        phoneNumber?: string;
+        address?: string;
+      }) => Promise<{
         id: number;
         email: string;
         name: string | null;
