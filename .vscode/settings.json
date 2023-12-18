@@ -9,5 +9,15 @@
       "fileMatch": ["/*electron-builder.json5", "/*electron-builder.json"],
       "url": "https://json.schemastore.org/electron-builder"
     }
+  ],
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:Store managment dashboard native}/database/mydatabase.db",
+      "name": "db",
+      "group": "db"
+    }
   ]
 }
