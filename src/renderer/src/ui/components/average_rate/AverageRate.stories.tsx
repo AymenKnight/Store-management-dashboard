@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ReportCard from './ReportCard';
+import AverageRate from './AverageRate';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'ReportCard',
-  component: ReportCard,
+  title: 'AverageRate',
+  component: AverageRate,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -13,16 +13,16 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof ReportCard>;
+} satisfies Meta<typeof AverageRate>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    type: 'revenue',
-    title: 'Report Title',
-    value: 200,
-    percentage: 10,
+    type: 'income',
+    money: 1000,
+    detail: 'Income',
+    percentage: 0.5,
   },
 };

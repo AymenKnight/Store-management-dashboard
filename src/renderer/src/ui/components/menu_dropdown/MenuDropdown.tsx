@@ -41,32 +41,34 @@ export default function MenuDropdown({
   };
 
   return (
-    <motion.div
-      className="menu-dropdown"
-      initial={{ gap: 0 }}
-      animate={{ gap: 10 }}
-      exit={{ gap: 0 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
-    >
-      <MenuOption
-        name={mainRouteName}
-        Icon={mainRouteIcon}
-        selected={mainRouteSelected}
-        onClick={handleSelection}
-      />
-      <AnimatePresence mode="wait">
-        {isListShown && selected && routes && routes.length > 0 && (
-          <motion.div
-            className="menu-dropdown-list"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+    <div>
+      <motion.div
+        className="menu-dropdown"
+        initial={{ gap: 0 }}
+        animate={{ gap: 10 }}
+        exit={{ gap: 0 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
+        <MenuOption
+          name={mainRouteName}
+          Icon={mainRouteIcon}
+          selected={mainRouteSelected}
+          onClick={handleSelection}
+        />
+        <AnimatePresence mode="wait">
+          {isListShown && selected && routes && routes.length > 0 && (
+            <motion.div
+              className="menu-dropdown-list"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              {children}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </div>
   );
 }

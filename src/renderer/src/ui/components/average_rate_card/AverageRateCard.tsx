@@ -5,56 +5,55 @@ import expenses from 'toPng/expenses.png';
 import incoming from 'toPng/incoming.png';
 import order from 'toPng/order.png';
 import user_profile_test from 'toPng/user_profile_test.png';
+import AverageRate from '@components/average_rate/AverageRate';
 
-//TODO add Props
-interface AverageRateCardProps {}
-export default function AverageRateCard({}: AverageRateCardProps) {
+export interface AverageDetails {
+  money: number;
+  detail: string;
+  percentage: number;
+}
+interface AverageRateCardProps {
+  title: string;
+  detail: string;
+  incomingAverageDetails: AverageDetails;
+  expensesAverageDetails: AverageDetails;
+  orderAverageDetails: AverageDetails;
+}
+export default function AverageRateCard({
+  title,
+  detail,
+  incomingAverageDetails,
+  expensesAverageDetails,
+  orderAverageDetails,
+}: AverageRateCardProps) {
   return (
     <div className="average-rate-card">
       <div className="details-container">
         <div className="title-details-container">
-          <span css={{ fontWeight: 'bold', fontSize: 28 }}>card title</span>
-          <span css={{ fontSize: 16 }}>
-            card detail card detail card detail card detail card detail card
-            detail card detail card detail
-          </span>
+          <span css={{ fontWeight: 'bold', fontSize: 28 }}>{title}</span>
+          <span css={{ fontSize: 16 }}>{detail}</span>
         </div>
         <div className="average-container">
           <span css={{ fontSize: 20 }}>Average rate per month</span>
           <div className="averages">
-            <div className="average">
-              <img src={incoming} css={{ width: 46, height: 46 }} />
-              <div className="average-details">
-                <span className="average-money">$15.412</span>
-                <span className="average-detail">incoming</span>
-                <div className="average-percentage">
-                  <BiSolidDownArrow size={18} css={{ color: 'red' }} />
-                  <span className="percentage">+5%</span>
-                </div>
-              </div>
-            </div>
-            <div className="average">
-              <img src={expenses} css={{ width: 46, height: 46 }} />
-              <div className="average-details">
-                <span className="average-money">$15.412</span>
-                <span className="average-detail">expenses</span>
-                <div className="average-percentage">
-                  <BiSolidDownArrow size={18} css={{ color: 'red' }} />
-                  <span className="percentage">+5%</span>
-                </div>
-              </div>
-            </div>
-            <div className="average">
-              <img src={order} css={{ width: 46, height: 46 }} />
-              <div className="average-details">
-                <span className="average-money">5.412</span>
-                <span className="average-detail">new order</span>
-                <div className="average-percentage">
-                  <BiSolidUpArrow size={18} css={{ color: 'green' }} />
-                  <span className="percentage">+5%</span>
-                </div>
-              </div>
-            </div>
+            <AverageRate
+              type="income"
+              money={incomingAverageDetails.money}
+              detail={incomingAverageDetails.detail}
+              percentage={incomingAverageDetails.percentage}
+            />
+            <AverageRate
+              type="expenses"
+              money={expensesAverageDetails.money}
+              detail={expensesAverageDetails.detail}
+              percentage={expensesAverageDetails.percentage}
+            />
+            <AverageRate
+              type="archive"
+              money={orderAverageDetails.money}
+              detail={orderAverageDetails.detail}
+              percentage={orderAverageDetails.percentage}
+            />
           </div>
         </div>
       </div>

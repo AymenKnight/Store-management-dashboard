@@ -1,12 +1,14 @@
 import './style/index.scss';
 import Logo from 'toSvg/logo.svg';
 import MenuDropdown from '@components/menu_dropdown';
+import ProductCard from '@components/product_card';
 import { routesData } from '@services/routes';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import MenuOption from '@components/menu_option';
 import { FaCircle } from 'react-icons/fa';
+import AverageRate from '@components/average_rate';
 
 interface AppMenuProps {}
 export default function AppMenu({}: AppMenuProps) {

@@ -1,0 +1,70 @@
+@use '~styles/appColors' as *;
+.product-card {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary;
+  padding: 25px;
+  gap: 10px;
+  position: relative;
+  > span {
+    font-size: 20px;
+    color: $white;
+    font-weight: 700;
+  }
+}
+.product-card-top {
+  display: flex;
+
+  > img {
+    border-radius: 5px;
+    width: 210px;
+    height: 150px;
+  }
+
+  > .TextButton {
+    position: absolute;
+    top: 10px;
+    right: -10px;
+  }
+}
+.product-card-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  > span {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+.product-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 15%;
+
+  > .edit {
+    display: flex;
+    align-items: center;
+    background-color: $secondary;
+    border-radius: 15px;
+    border: 2px solid $hotpurple;
+    font-size: 18px;
+    font-weight: 500;
+    color: $hotpurple;
+    padding: 5px 20px;
+    > a {
+      margin-left: 3px;
+    }
+  }
+  > .delete {
+    background-color: $secondary;
+    border-radius: 15px;
+    border: 2px solid $hotred;
+    font-size: 18px;
+    font-weight: 500;
+    color: $hotred;
+    padding: 5px 20px;
+  }
+}
