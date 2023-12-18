@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     type: 'income',
-    money: 1000,
+    value: 1000,
     detail: 'Income',
     percentage: 0.5,
   },
